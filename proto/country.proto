@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package country;
+
+message Country {
+    int64 id = 1;
+    string name = 2;
+    string flag = 3;
+}
+
+message GetCountriesRequest {}
+
+message GetCountriesResponse {
+    repeated Country countries = 1;
+}
+
+message AddCountryRequest {
+    Country country = 1;
+}
+
+message AddCountryResponse {
+    string success = 1;
+}
+
+service CountryService {
+    rpc GetCountries(GetCountriesRequest) returns (GetCountriesResponse) {};
+    rpc AddCountry(AddCountryRequest) returns (AddCountryResponse) {};
+}

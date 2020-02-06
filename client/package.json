@@ -1,0 +1,32 @@
+{
+  "name": "grpc-web-client",
+  "version": "1.0.0",
+  "description": "client side of grpc-web-example.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "protoc --proto_path=./proto/ --js_out=import_style=commonjs:./client/ --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./client/ ./proto/country.proto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akursat/grpc-web-example.git"
+  },
+  "keywords": [
+    "grpc",
+    "grpcWeb"
+  ],
+  "author": "akursat",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/akursat/grpc-web-example/issues"
+  },
+  "homepage": "https://github.com/akursat/grpc-web-example#readme",
+  "dependencies": {
+    "grpc-web": "^1.0.7",
+    "google-protobuf": "^3.11.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
